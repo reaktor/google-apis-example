@@ -1,4 +1,6 @@
 import { getSheetData } from '../src/googleSheets'
+import { GetServerSideProps } from 'next'
+import { withAuthentication } from '../src/withAuthentication'
 
 type HomeProps = {
   sheetData: string[][]
@@ -25,10 +27,10 @@ export default function Home(props: HomeProps) {
   )
 }
 
-export async function getStaticProps(): Promise<{ props: HomeProps }> {
+export const getServerSideProps: GetServerSideProps = withAuthentication(async (context) => {
   return {
     props: {
       sheetData: await getSheetData()
     }    
   }
-}
+})
