@@ -1,5 +1,7 @@
 Google APIs examples implemented on Next.js.
 
+See [Live demo](https://google-apis-example.herokuapp.com/)
+
 # Google auth implementation
 
 - Pages like [page2](https://github.com/reaktor/google-apis-example/blob/main/pages/page2.tsx) use a [withAuthentication](https://github.com/reaktor/google-apis-example/blob/main/src/withAuthentication.ts) wrapper that redirects to Google Login if no valid session cookie.
