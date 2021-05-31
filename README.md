@@ -1,4 +1,14 @@
-Google APIs examples.
+Google APIs examples implemented on Next.js.
+
+# Google auth implementation
+
+- Pages like [page2](https://github.com/reaktor/google-apis-example/blob/main/pages/page2.tsx) use a [withAuthentication](https://github.com/reaktor/google-apis-example/blob/main/src/withAuthentication.ts) wrapper that redirects to Google Login if no valid session cookie.
+- Google auth page URL generated [here](https://github.com/reaktor/google-apis-example/blob/main/src/googleAuth.ts#L24) using Google OAuth2 API.
+- The `/api/google-callback` endpoint handles the callback from Google, verifies code from Google using the [getGoogleAccountFromCode](getGoogleAccountFromCode) helper and redirects to the path that the user originally requested
+
+For some reason this workflow fails for some users and I don't know why at the moment. Help me out!
+
+# Setup locally
 
 ## Setup Google Sheets integration
 
