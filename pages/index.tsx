@@ -9,7 +9,8 @@ type HomeProps = {
 export default function Home(props: HomeProps) {
   return (
    <div>
-     <h1>Hello</h1>
+     <h1>Google sheets example</h1>
+     <p>The content below is fetched from a Google Sheet.</p>
      <table>
        {
          props.sheetData.map(row => {

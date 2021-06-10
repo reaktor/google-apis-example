@@ -10,7 +10,7 @@ export default function Home(props: HomeProps) {
   return (
    <div>
      <h1>Page 2</h1>
-     <p>Also requires authentication</p>
+     <p>A simple example page that requires Google authentication.</p>
    </div>
   )
 }
