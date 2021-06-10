@@ -13,6 +13,10 @@ See [Live demo](https://google-apis-example.herokuapp.com/)
 
 Plugins, including but not necessarily limited to Privacy Badger, do actually break the Google login in at least when your user enters your site from an external like (from Slack for example) if Google needs to present the "select account" dialog. This happens because Privacy Badger incorrectly prevents auth.google.com from accessing its own cookies. 
 
+Non-workarounds:
+
+- It's still broken if the Privacy Badger user "turns privacy badger off" for "this site". You have to disable the plugin completely to fix this.
+
 Workarounds:
 
 - The usage of the `hd` parameter fixes this, but the same fix doesn't of course apply to cases where you don't have a single domain (like reaktor.fi) to streamline for
