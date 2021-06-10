@@ -22,6 +22,10 @@ Workarounds:
 - The usage of the `hd` parameter fixes this, but the same fix doesn't of course apply to cases where you don't have a single domain (like reaktor.fi) to streamline for
 - Performing a client side Javascript redirect instead of a server side redirect seems to fix this. So instead of responding with `302 - FOUND` and a `Location` header, you respond with something like `<script>document.location=...</script>`
 
+# Google Sheets integration
+
+In [`googleSheets.ts`](https://github.com/reaktor/google-apis-example/blob/main/src/googleSheets.ts) we use the Google Sheets API to fetch data from a sheet. This is done on the server-side using a [service account](https://cloud.google.com/iam/docs/service-accounts). See setup section below.
+
 # Setup locally
 
 ## Setup Google Sheets integration
