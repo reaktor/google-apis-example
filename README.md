@@ -8,7 +8,10 @@ See [Live demo](https://google-apis-example.herokuapp.com/)
 - Google auth page URL generated [here](https://github.com/reaktor/google-apis-example/blob/main/src/googleAuth.ts#L24) using Google OAuth2 API.
 - The `/api/google-callback` endpoint handles the callback from Google, verifies code from Google using the [getGoogleAccountFromCode](getGoogleAccountFromCode) helper and redirects to the path that the user originally requested
 - We utilize the [`hd='reaktor.fi'`](https://github.com/reaktor/google-apis-example/blob/main/src/googleAuth.ts#L27) parameter to streamline the Login process for Reaktor users. This way Google doesn't present the "select account" dialog for users who have both Work and Personal Google accounts.
-- Notice that plugins like Privacy Badger actually break the Google login in at least when your user enters your site from an external like (from Slack for example) if Google needs to present the "select account" dialog. This happens because Privacy Badger incorrectly prevents auth.google.com from accessing its own cookies. The usage of the `hd` parameter fixes this, but the same fix doesn't of course apply to cases where you don't have a single domain (like reaktor.fi) to streamline for.
+
+## Problems with Privacy Plugins
+
+Plugins, including but not necessarily limited to Privacy Badger, do actually break the Google login in at least when your user enters your site from an external like (from Slack for example) if Google needs to present the "select account" dialog. This happens because Privacy Badger incorrectly prevents auth.google.com from accessing its own cookies. The usage of the `hd` parameter fixes this, but the same fix doesn't of course apply to cases where you don't have a single domain (like reaktor.fi) to streamline for.
 
 # Setup locally
 
