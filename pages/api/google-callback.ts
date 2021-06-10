@@ -9,7 +9,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     console.log("Verifying google auth", code)
     try {
         const userInfo = await getGoogleAccountFromCode(code)
-        setAuthenticatedUser(res, userInfo)
+        setAuthenticatedUser(req, res, userInfo)
         const redirectCookie = req.cookies.redirect        
         res.redirect(redirectCookie ?? "/")
     } catch (e) {

@@ -21,7 +21,7 @@ export function getAuthenticatedUser(req: IncomingMessage): UserInfo | null {
   return null
 }
 
-export function setAuthenticatedUser(res: ServerResponse, userInfo: UserInfo) {
+export function setAuthenticatedUser(req: IncomingMessage, res: ServerResponse, userInfo: UserInfo) {
     const jwt = JWT.sign(userInfo, secret) 
-    new Cookies(null as any, res).set("user", jwt, { maxAge: 24 * 3600 * 1000 } ) // Max 24 hours
+    new Cookies(req, res).set("user", jwt, { maxAge: 24 * 3600 * 1000 } ) // Max 24 hours
 }
