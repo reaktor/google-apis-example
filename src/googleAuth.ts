@@ -23,9 +23,8 @@ function googleOAUTH2() {
 
 export function googleAuthPageURL() {
     return googleOAUTH2().generateAuthUrl({
-        access_type: 'offline',
-        prompt: 'consent', // access type and approval prompt will force a new refresh token to be made each time signs in
-        scope: googleScopes
+        scope: googleScopes,
+        hd: "reaktor.fi" // Streamline login process for Reaktor users, see https://developers.google.com/identity/protocols/oauth2/openid-connect#hd-param
     });
 }
 
