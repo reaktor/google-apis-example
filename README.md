@@ -11,7 +11,12 @@ See [Live demo](https://google-apis-example.herokuapp.com/)
 
 ## Problems with Privacy Plugins
 
-Plugins, including but not necessarily limited to Privacy Badger, do actually break the Google login in at least when your user enters your site from an external like (from Slack for example) if Google needs to present the "select account" dialog. This happens because Privacy Badger incorrectly prevents auth.google.com from accessing its own cookies. The usage of the `hd` parameter fixes this, but the same fix doesn't of course apply to cases where you don't have a single domain (like reaktor.fi) to streamline for.
+Plugins, including but not necessarily limited to Privacy Badger, do actually break the Google login in at least when your user enters your site from an external like (from Slack for example) if Google needs to present the "select account" dialog. This happens because Privacy Badger incorrectly prevents auth.google.com from accessing its own cookies. 
+
+Workarounds:
+
+- The usage of the `hd` parameter fixes this, but the same fix doesn't of course apply to cases where you don't have a single domain (like reaktor.fi) to streamline for
+- Performing a client side Javascript redirect instead of a server side redirect seems to fix this. So instead of responding with `302 - FOUND` and a `Location` header, you respond with something like `<script>document.location=...</script>`
 
 # Setup locally
 
