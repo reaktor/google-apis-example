@@ -26,6 +26,11 @@ Workarounds:
 
 In [`googleSheets.ts`](https://github.com/reaktor/google-apis-example/blob/main/src/googleSheets.ts) we use the Google Sheets API to fetch data from a sheet. This is done on the server-side using a [service account](https://cloud.google.com/iam/docs/service-accounts). See setup section below.
 
+Alternative approaches to Google Sheets integration
+
+- If you're using [Gatsby](https://www.gatsbyjs.com/), you can include Google Sheets data using [`gatsby-source-google-spreadsheets`](https://www.gatsbyjs.com/plugins/gatsby-source-google-sheets/)
+- For appending rows to a Sheet, you can use a service like Zapier
+
 # Setup locally
 
 ## Setup Google Sheets integration
