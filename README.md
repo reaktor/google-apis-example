@@ -1,6 +1,6 @@
 Google APIs examples implemented on Next.js.
 
-See [Live demo](https://google-apis-example.herokuapp.com/)
+See [Live demo](https://google-apis-example.herokuapp.com/) (requires a reaktor Google account, sorry!)
 
 # Google auth implementation
 
