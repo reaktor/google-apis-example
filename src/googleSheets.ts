@@ -5,12 +5,13 @@ const sheets = google.sheets('v4')
 const GOOGLE_SHEETS_ID = getEnv("GOOGLE_SHEETS_ID")
 const GOOGLE_SERVICE_KEY = JSON.parse(getEnv("GOOGLE_SERVICE_KEY"))
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
+const sheetName = 'Pages'
 
 export async function getSheetData(): Promise<string[][]> {
     const auth = await getAuthToken()
     const sheet = await getSpreadSheetValues({
         spreadsheetId: GOOGLE_SHEETS_ID,
-        range: 'Pages',
+        range: sheetName,
         auth,
     })
 
@@ -33,6 +34,20 @@ async function getSpreadSheetValues({
         range,
     })
     return res
+}
+
+export async function appendRow(values: string[]): Promise<void> {
+    const auth = await getAuthToken()
+    await sheets.spreadsheets.values.append({
+        spreadsheetId: GOOGLE_SHEETS_ID,
+        auth,
+        range: sheetName,
+        valueInputOption: "RAW",        
+        requestBody: {
+            values: [values]
+        }
+    })
+    console.log("Appended row to Sheets")
 }
 
 async function getAuthToken() {
