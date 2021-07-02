@@ -24,7 +24,7 @@ Workarounds:
 
 # Google Sheets integration
 
-In [`googleSheets.ts`](https://github.com/reaktor/google-apis-example/blob/main/src/googleSheets.ts) we use the Google Sheets API to fetch data from a sheet. This is done on the server-side using a [service account](https://cloud.google.com/iam/docs/service-accounts). See setup section below.
+In [`googleSheets.ts`](https://github.com/reaktor/google-apis-example/blob/main/src/googleSheets.ts) we use the Google Sheets API to fetch data from a sheet, as well as insert a row of data. This is done on the server-side using a [service account](https://cloud.google.com/iam/docs/service-accounts). See setup section below.
 
 Alternative approaches to Google Sheets integration
 
